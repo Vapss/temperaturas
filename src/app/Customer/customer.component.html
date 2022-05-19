@@ -1,35 +1,62 @@
-<div>
-    Customer code : <input type="text" [(ngModel)]="customerModel.CustomerCode" name="cCode" id="cCode"> <br>
-    Customer name : <input type="text" [(ngModel)]="customerModel.CustomerName" name="cName" id="cName"> <br>
-    Customer amount : <input type="text" [(ngModel)]="customerModel.CustomerAmount" name="cAmount" id="cAmount"> <br>
-    Customer Fahrenheit : <input type="text" [(ngModel)]="customerModel.Fahrenheit" name="cFahrenheit" id="cFahrenheit"> <br>
-    Customer Celsius : <input type="text" [(ngModel)]="customerModel.Centigrade" name="cCelsius" id="cCelsius"> <br>
-    <input type="button" value="Add" (click)="Add()">
-    <br>
-    {{customerModel.CustomerCode}} <br>
-    {{customerModel.CustomerName}} <br>
-    {{customerModel.CustomerAmount}} <br>
-    {{customerModel.Fahrenheit}} <br>
-    {{customerModel.Centigrade}} <br>
+<h1 class="text-center">{{titulo}}</h1>
 
-    <table>
-        <tr>
-            <td>Customer code</td>
-            <td>Customer name</td>
-            <td>Customer amount</td>
-            <td>Centigrade to Fahrenheit</td>
-            <td>Fahrenheit to Centigrade</td>
-        </tr>
-        <tr *ngFor ="let cust of customerModels" >
-            <td> {{cust.CustomerCode}} </td>
-            <td> {{cust.CustomerName}} </td>
-            <td> {{cust.CustomerAmount}} </td>
-        </tr>
-        <tr>
-            <td> Resultados operacion Fahrenheit a Celsius y Celsius a Fahrenheit</td>
-        </tr>
-        <tr *ngFor ="let cust of customerModels" >
-            <td> {{cust.CentigradeToFahrenheit}} </td>
-            <td> {{cust.FahrenheitToCentigrade}} </td>
-    </table>
+<label>Grados Centigrados: </label>
+<input type="number" class="form-control" name="numero" [(ngModel)]="numero" placeholder="Inserta un número"/>
+
+<button type="submit" class="btn btn-outline btn-primary"
+        (click)="Grads1()"
+>Convertir Grados</button>
+<p>Centigrados a Farenheit es: {{resultadosFahrenACentigrados}}</p>
+<p>Centigrados a Kelvin es: {{resCentigradosAKelvin}}</p>
+
+
+<div class="container pt-2">
+    
+   <form>
+        <div class="form-group">
+            <label>
+                Grados Kelvin : 
+            </label>
+            <input type="number" class="form-control" name="numero" [(ngModel)]="numero2" placeholder="Inserta un número"/>
+
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-outline btn-primary"
+            (click)="Grad2()"
+            >Convertir Grados</button>
+        </div>
+        <div>
+          <p>El resultado es de Kelvin  a Centigrados es : {{resKelvinACentigrados}}</p>
+        </div>
+        <div>
+            <p>El resultado es de Kelvin a Farenheit es : {{resKelvinAFahrenheit}}</p>
+        </div>
+       
+   </form>
 </div>
+
+
+<div class="container pt-2">
+    
+    <form>
+         <div class="form-group">
+             <label>
+                 Grados Farenheit : 
+             </label>
+             <input type="number" class="form-control" name="numero" [(ngModel)]="numero3" placeholder="Inserta un número"/>
+ 
+         </div>
+         <div class="mb-3">
+             <button type="submit" class="btn btn-outline btn-primary"
+             (click)="Grad3()"
+             >Convertir Grados</button>
+         </div>
+         <div>
+           <p>El resultado es de Farenheit  a Centigrados es : {{fac}}</p>
+         </div>
+         <div>
+             <p>El resultado es de Farenhei  a Kelvin es : {{fal}}</p>
+         </div>
+        
+    </form>
+ </div>
